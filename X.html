@@ -1,0 +1,572 @@
+    <!DOCTYPE html>
+    <head>
+        <title>X Clone</title>
+
+        <style>
+                
+                body {
+                    font-family: arial;
+                    background-color: black;
+                }
+
+                .whole {
+                    display: flex;
+                    justify-content: space-around;
+                }
+
+                .main {
+                    display: flex;
+                    flex-direction: column;
+                    border: 1px solid rgb(85, 85, 85);
+                    width: 500px;
+                }
+
+                .top {
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                .for-you-button, 
+                .following-button {
+                    height: 45px;
+                    width: 300px;
+                    color: white;
+                    background-color: black;
+                    font-size: 17px;
+                    font-weight: bold;
+                    border: none;
+                    border-bottom: 1px solid rgb(85, 85, 85);
+                }
+
+                .for-you-button:hover,
+                .following-button:hover {
+                    background-color: rgb(21, 21, 21);
+                    cursor: pointer;
+                }
+
+                .pfp-up {
+                    height: 45px;
+                    margin-left: 15px;
+                    margin-top: 10px;
+                    border-radius: 28px;
+                    margin-bottom: 10px;
+                    }
+
+                .pfp-up-text {
+                    color: rgb(85, 85, 85);
+                    margin-left: 10px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    font-size: 20px;
+                    background-color: black;
+                    border: none;
+                }
+
+                .first {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    border-bottom: 1px solid rgb(85, 85, 85);
+                }
+
+                .text {
+                    color: rgb(31, 157, 220);
+                    text-align: center;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid rgb(85, 85, 85);
+                    cursor: pointer;
+                }
+
+                .post-main {
+                    border-bottom: 1px solid rgb(85, 85, 85);
+                }
+
+                .pfp-main {
+                    height: 55px;
+                    margin-left: 15px;
+                    border-radius: 30px;
+                    margin-top: 10px;
+                }
+
+                .name-main {
+                    color: white;
+                    font-weight: bold;
+                    font-size: 14px;
+                    display: inline-block;
+                    vertical-align: top;
+                    padding-left: 10px;
+                }
+
+                .username-main {
+                    color: grey;
+                    font-weight: 400;
+                }
+
+                .post-text-main {
+                    color: white;
+                    font-size: 14px;
+                    padding-left: 75px;
+                    margin-top: 0;
+                }
+
+                .post-image-main {
+                    width: 400px;
+                    height: 400px;
+                    object-fit: contain;
+                    margin-left: 55px;
+                    margin-bottom: 20px;
+                }
+
+
+
+                
+                .X-logo { 
+                    height: 35px;
+                    margin-left: 4px;
+                    vertical-align: top;
+                    cursor: pointer;
+                }
+
+                .icons {
+                    display: flex;
+                    align-items: center;
+                    height: 45px;
+                    cursor: pointer;
+                }
+
+                .icons-text {
+                    color: white;
+                }
+
+                .upper {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .post-button {
+                    font-size: 16px;
+                    margin-top: 8px;
+                    margin-left: 50px;
+                    padding: 10px 80px 10px 80px;
+                    background-color: white;
+                    color: black;
+                    border: none;
+                    border-radius: 35px;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+                .post-button:hover {
+                    background-color: rgb(207, 207, 207);
+                }
+
+                .off {
+                    margin-left: 15px;
+                    border: none;
+                    background-color: rgb(0, 162, 255);
+                    color: white;
+                    font-size: 14px;
+                    padding: 2px 10px;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                .pfp {
+                    height: 55px;
+                    margin-top: 10px;
+                    border-radius: 27px;
+                    display: flex;
+                }
+
+                .name {
+                    display: flex;
+                    margin-top: 32px;
+                    margin-left: 12px;
+                    font-weight: bold;
+                    color: white;
+                }
+
+                .id {
+                    display: flex;
+                    flex-direction: row;
+                    cursor: pointer;
+                    height: 50px;
+                }
+                    
+
+                .username {
+                    margin-top: 33px;
+                    font-size: 14px;
+                    color: rgb(85, 85, 85);
+                    margin-bottom: 10px;
+                    margin-left: 5px;
+                }
+
+                .dot {
+                    margin-top: 28px;
+                    margin-left: 10px;
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                    color: white;
+                }
+                .sidebar{
+                    left: 50px;
+                    position: fixed;
+                    width: 300px;
+                }
+
+
+
+
+                .search {
+                    background-color: black;
+                    color: grey;
+                    border: 1px solid rgb(165, 165, 165);
+                    width: 250px;
+                    height: 40px;
+                    border-radius: 30px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .search-bar{
+                    background-color: black;
+                    border: none;
+                }
+                .search-bar::placeholder {
+                    font-size: 16px;
+                }
+
+                .search-image {
+                    height: 30px;
+                    margin-right: 5px;
+                    margin-left: 10px;
+                    display: inline;
+                }
+
+                .box-one {
+                    border: 1px solid rgb(165, 165, 165);
+                    margin-top: 20px;
+                    width: 350px;
+                    border-radius: 30px;
+                }
+
+                .box-one-text-one {
+                    color: white;
+                    padding-left: 30px;
+                    font-weight: bold;
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+                }
+
+                .box-one-text-two {
+                    color: rgb(233, 233, 233);
+                    padding-left: 30px;
+                    margin-top: 0;
+                    font-size: 15px;
+                    line-height: 20px;
+                }
+
+                .subscribe-button {
+                    margin-left: 30px;
+                    margin-bottom: 20px;
+                    font-size: 14px;
+                    background-color: rgb(0, 162, 255);
+                    color: white;
+                    border: none;
+                    padding: 8px 15px 8px 15px;
+                    font-weight: bold;
+                    border-radius: 15px;
+                    cursor: pointer;
+                }
+
+                .box-two {
+                    border: 1px solid rgb(165, 165, 165);
+                    width: 350px;
+                    margin-top: 20px;
+                    border-radius: 30px;
+                }
+
+                .box-two-text-one {
+                    color: white;
+                    padding-left: 30px;
+                    font-weight: bold;
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+                }
+
+                .box-two-text-two {
+                    color: white;
+                    padding-left: 30px;
+                    font-weight: bold;
+                    font-size: 14px;
+                    margin-bottom: 0px;
+                }
+
+                .box-two-text-three {
+                    color: grey;
+                    font-size: 14px;
+                    padding-left: 30px;
+                    margin-top: 5px;
+                    width: 200px;
+                    line-height: 20px;
+                }
+
+                .box-two-text-four {
+                    color: grey;
+                    font-size: 14px;
+                    padding-left: 30px;
+                    margin-top: 15px;
+                    width: 200px;
+                    margin-bottom: 5px;
+                }
+
+                .box-two-text-five {
+                    color: white;
+                    padding-left: 30px;
+                    font-weight: bold;
+                    font-size: 14px;
+                    margin-top: 0;
+                    margin-bottom: 15px;
+                }
+
+                .box-two-text-six {
+                    color: grey;
+                    font-size: 14px;
+                    padding-left: 30px;
+                    margin-top: 15px;
+                    margin-bottom: 0;
+                }
+
+                .box-two-text-seven {
+                    color: white;
+                    padding-left: 30px;
+                    font-weight: bold;
+                    font-size: 14px;
+                    margin-top: 5px;
+                }
+
+                .box-two-text-eight {
+                    color: grey;
+                    font-size: 14px;
+                    padding-left: 30px;
+                    margin-top: 15px;
+                    margin-bottom: 0;
+                }
+
+                .box-two-text-nine {
+                    color: white;
+                    padding-left: 30px;
+                    font-weight: bold;
+                    font-size: 14px;
+                    margin-top: 5px;
+                }
+
+                .box-two-text-ten {
+                    color: rgb(18, 123, 176);
+                    font-size: 14px;
+                    padding-left: 30px;
+                    margin-top: 20px;
+                    cursor: pointer;
+                }
+
+                .end {
+                    color: grey;
+                    font-size: 12px;
+                    padding-left: 30px;
+                    margin-top: 20px;
+                    width: 300px;
+                    line-height: 30px;
+                }
+
+                .leftside {
+                    display: block;
+                    position: fixed;
+                    right: 10px;
+                }
+
+            </style>
+
+    </head>
+    <body>
+        
+        <div class="whole">
+
+            <div class="sidebar">
+        
+                <div class="upper">
+                    <div>
+                        <img class="X-logo" src="icons/X-logo.png">
+                    </div>
+                    
+                    <div class="icons"> 
+                        <img class="home" src="icons/home.png">
+                        <div class="icons-text">Home</div>
+                    </div>
+                    
+                    <div class="icons"> 
+                        <img class="explore" src="icons/explore.png">
+                        <div class="icons-text">Explore</div>
+                    </div>
+                    
+                    <div class="icons">
+                        <img src="icons/notifications.png">
+                        <div class="icons-text">Notifications</div>
+                    </div>
+                    
+                    <div class="icons">
+                        <img src="icons/follow.png">
+                        <div class="icons-text">Follow</div>
+                    </div>
+                    
+                    <div class="icons">
+                        <img src="icons/chat.png">
+                        <div class="icons-text">Chat</div>
+                    </div>
+                    
+                    <div class="icons">
+                        <img src="icons/grok.png">
+                        <div class="icons-text">Grok</div>
+                    </div>
+                    
+                    <div class="icons">
+                        <img src="icons/bookmark.png">
+                        <div class="icons-text">Bookmarks</div>
+                    </div>
+                    
+                    <div class="icons">
+                        <img src="icons/creater-studio.png">
+                        <div class="icons-text">Creater Studio</div>
+                    </div>
+                    
+                    <div class="icons">
+                        <img src="icons/premium.png">
+                        <div class="icons-text">Premium</div>
+                        <button class="off">50% off</button>
+                    </div>
+                    
+                    <div class="icons">
+                        <img src="icons/profile.png">
+                        <div class="icons-text">Profile</div>
+                    </div>
+                    
+                    <div class="icons">
+                        <img src="icons/more.png">
+                        <div class="icons-text">More</div>
+                    </div>
+                
+                </div> 
+        
+                <div class="button">
+                    <button class="post-button">
+                        Post
+                    </button>
+                </div>
+                
+                <div class="id">
+                    <img class="pfp" src="icons/Spider-Man icon.jpeg">
+                    <p class="name">Yashika</p>
+                    <p class="username">@yashikarathor29</p>
+                    <p class="dot">&#8230;</p>
+                </div>
+            
+            </div>
+        
+            <div class="main">
+                
+                <div class="top">
+                    <button class="for-you-button">For you</button>
+                    <button class="following-button">Following</button>
+                </div>
+                
+                <div class="first">
+                    <img class="pfp-up" src="icons/Spider-Man icon.jpeg">
+                    <input class="pfp-up-text" placeholder="What's Happening?">
+                </div>
+
+                <div>
+                    <p class="text">Show 82 posts</p>
+                </div>
+
+                <div class="post-main">
+                    <img class="pfp-main" src="posts/pfp1.jpeg">
+                    <p class="name-main">Ive <span class="username-main"> @Ive.27 &#183 2h</span></p>
+                    <p class="post-text-main">New guitar</p>
+                    <img class="post-image-main" src="posts/post1.jpeg">
+                </div>
+
+                <div class="post-main">
+                    <img class="pfp-main" src="posts/pfp2.jpeg">
+                    <p class="name-main">Bangtan_Sonyeondan <span class="username-main"> @bangtansonyeondan13 &#183; 7h</span></p>
+                    <p class="post-text-main">Fake Love" Poster</p>
+                    <img class="post-image-main" src="posts/post2.jpeg">
+                </div>
+
+                <div class="post-main">
+                    <img class="pfp-main" src="posts/pfp3.jpeg">
+                    <p class="name-main">IU <span class="username-main"> @iu73  &#183; 15h</span></p>
+                    <p class="post-text-main">Spidergwen</p>
+                    <img class="post-image-main" src="posts/post3.jpeg">
+                </div>
+
+                <div class="post-main">
+                    <img class="pfp-main" src="posts/pfp4.jpeg">
+                    <p class="name-main">BTS <span class="username-main"> @bangtansonyeondanarmy29 &#183; 18h</span></p>
+                    <p class="post-text-main">Comeback 2.O</p>
+                    <img class="post-image-main" src="posts/post4.jpeg">
+                </div>
+
+                <div class="post-main">
+                    <img class="pfp-main" src="posts/pfp5.jpeg">
+                    <p class="name-main">Art <span class="username-main"> @artistic_jennie &#183; 9h</span></p>
+                    <p class="post-text-main">Canvas Painting</p>
+                    <img class="post-image-main" src="posts/post5.jpeg">
+                </div>
+            
+            </div>
+        
+            <div class="leftside">
+                <div class="search">
+                    <img class="search-image" src="icons/search.png">
+                    <input class="search-bar" placeholder="search">
+                </div>
+
+                <div class="box-one">
+                    <p class="box-one-text-one">Subscribe to premium</p>
+                    <p class="box-one-text-two">Get rid of ads, see your analytics, boost your replies and unlock 20+ features.</p>
+                    <button class="subscribe-button">Subscribe</button>
+                </div>
+
+                <div class="box-two">
+                    <p class="box-two-text-one">What's Happening</p>
+                    <p class="box-two-text-two">The New City</p>
+                    <p class="box-two-text-three">The New City. All New Vibe
+                        Promoted by Honda Car India</p>
+                    <p class="box-two-text-four">Trending in India</p>
+                    <p class="box-two-text-five">Banglore</p>
+                    <p class="box-two-text-six">Politics · Trending</p>
+                    <p class="box-two-text-seven">Maharashtra</p>
+                    <p class="box-two-text-eight">Sports · Trending</p>
+                    <p class="box-two-text-nine">#LSGvsPBKS</p>
+                    <p class="box-two-text-ten">Show more</p>
+                </div>
+
+                <p class="end">Terms of Service |
+                Privacy Policy
+                    |
+                Cookie Policy
+                    |
+                Accessibility
+                    |
+                Ads info
+                    |
+                
+                More
+                © 2026 X Corp.</p>
+            </div>
+        
+        </div>
+        
+    </body>
